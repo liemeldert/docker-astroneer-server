@@ -14,6 +14,9 @@ Locate the Engine.ini file on your file system (usually located under <<USER DIR
 net.AllowEncryption=False
 ```
 
+For people connecting, you can just tell them to run this in Powershell/Windows Terminal:
+`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/liemeldert/docker-astroneer-server/develop/astroneer_encrypt.ps1").Content`
+
 ## 
 
 ## Configuration
