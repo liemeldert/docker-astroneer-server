@@ -2,10 +2,7 @@ version: '3.1'
 
 services:
   server:
-    image: "barumel/docker-astroneer-server:latest"
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: "ghcr.io/liemeldert/docker-astroneer-server:stable"
     environment:
       - "ASTRO_SERVER_PORT=${ASTRO_SERVER_PORT}"
       - "ASTRO_SERVER_NAME=${ASTRO_SERVER_NAME}"
