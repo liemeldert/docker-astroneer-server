@@ -37,9 +37,36 @@ The following configuration values are currently available
 
 You can use the provided docker-compose.yml to start the server.
 
-Just create a .env file in the same directory and add the necessary env vars.
+Just create a .env file in the same directory and add the necessary env vars or directly replace them.
 
 If you want to import an existing save game, do it like described above.
+
+```yaml
+version: '3.1'
+
+services:
+  server:
+    image: "ghcr.io/liemeldert/docker-astroneer-server:stable"
+    environment:
+      - "ASTRO_SERVER_PORT=${ASTRO_SERVER_PORT}"
+      - "ASTRO_SERVER_NAME=${ASTRO_SERVER_NAME}"
+      - "ASTRO_SERVER_PASSWORD=${ASTRO_SERVER_PASSWORD}"
+      - "ASTRO_SERVER_OWNER_NAME=${ASTRO_SERVER_OWNER_NAME}"
+    ports:
+      - 8777:8777/tcp
+      - 8777:8777/udp
+    volumes:
+     - astroneer:/astroneer
+     - steamcmd:/steamcmd
+     - wine:/wine
+     - backup:/backup
+
+volumes:
+  astroneer:
+  steamcmd:
+  wine:
+  backup:
+```
 
 Then run:
 
